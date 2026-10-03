@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Around Town — Flashcards · Map Match · Quiz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <header>
+    <h1>AROUND TOWN</h1>
+    <p class="sub">🏙️ Learn places in the city · 🔊 Tap to hear · 🎮 Play games!</p>
+    <nav class="tabs">
+      <button class="tab active" data-tab="slides">📚 Flashcards</button>
+      <button class="tab" data-tab="map">🗺️ Map Match</button>
+      <button class="tab" data-tab="quiz">🧠 Quiz</button>
+    </nav>
+  </header>
+
+  <!-- ================= FLASHCARDS ================= -->
+  <section id="slides" class="panel active">
+    <p class="tap-hint">👆 Click the card to flip it &amp; hear the word!</p>
+
+    <div class="flash-area">
+      <button class="nav-arrow" id="prevBtn" aria-label="Previous">◀</button>
+
+      <div class="flashcard" id="flashcard" tabindex="0">
+        <div class="card-inner" id="cardInner">
+          <div class="card-face card-front">
+            <div class="card-img" id="slideImg"></div>
+            <h2 class="card-word" id="slideWord">—</h2>
+            <span class="speaker-badge">🔊 tap to flip</span>
+          </div>
+          <div class="card-face card-back">
+            <div class="back-icon" id="backIcon">🏙️</div>
+            <h3 class="back-title" id="backTitle">—</h3>
+            <p class="back-desc" id="backDesc">—</p>
+            <span class="speaker-badge">🔊 tap to hear</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="nav-arrow" id="nextBtn" aria-label="Next">▶</button>
+    </div>
+
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <!-- ================= MAP MATCH ================= -->
+  <section id="map" class="panel">
+    <div class="map-header">
+      <div class="map-question">
+        <span class="prof-emoji" id="profEmoji">👨‍⚕️</span>
+        <h3 id="mapQuestion">Where does the doctor go?</h3>
+      </div>
+      <div class="map-score">
+        Score: <span id="mapScore">0</span> / <span id="mapTotal">9</span>
+      </div>
+    </div>
+
+    <div class="map-board" id="mapBoard">
+      <div id="mapGrid" class="map-grid"></div>
+      <div id="walker" class="walker">🚶</div>
+    </div>
+
+    <p id="mapMsg" class="map-msg"></p>
+
+    <div class="game-actions">
+      <button id="mapNewBtn">🔄 Play Again</button>
+    </div>
+  </section>
+
+  <!-- ================= QUIZ ================= -->
+  <section id="quiz" class="panel">
+    <div class="quiz-header">
+      <div class="quiz-progress">
+        Question <span id="quizIndex">1</span> / <span id="quizTotal">10</span>
+      </div>
+      <div class="quiz-score">
+        ✅ <span id="quizScore">0</span>
+      </div>
+    </div>
+
+    <p class="quiz-question" id="quizQuestion">—</p>
+    <div class="quiz-options" id="quizOptions"></div>
+    <p class="quiz-msg" id="quizMsg"></p>
+
+    <div class="game-actions">
+      <button id="quizNewBtn">🔄 New Quiz</button>
+    </div>
+  </section>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
